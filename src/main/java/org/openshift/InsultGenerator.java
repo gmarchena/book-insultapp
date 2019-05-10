@@ -21,8 +21,11 @@ public class InsultGenerator {
    password);
      
    if (connection != null) {
-   	String SQL = "select a.string AS first, b.string AS second, 
-	c.string AS noun from short_adjective a , long_adjective b, 
+   	String SQL = "select a.string AS first, 
+	b.string AS second, 
+	c.string AS noun 
+	from short_adjective a , 
+	long_adjective b, 
 	noun c ORDER BY random() limit 1"; 
     Statement stmt = connection.createStatement();
     ResultSet rs = stmt.executeQuery(SQL);
