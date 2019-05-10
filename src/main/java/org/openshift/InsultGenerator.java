@@ -17,18 +17,12 @@ public class InsultGenerator {
    databaseURL += "/" + System.getenv("POSTGRESQL_DATABASE");
    String username = System.getenv("POSTGRESQL_USER");
    String password = System.getenv("PGPASSWORD");
-   Connection connection = DriverManager.getConnection(databaseURL, username, 
+   Connection connection = DriverManager.getConnection(databaseURL, username,
    password);
-   //PRueba
-   String miabuela = "funciona";
-   String MiOtraAbuela = "No funciona";
-   String TERCERABUELA = "No existe";
-   String ultimaabuela = "final";
-  
+     
    if (connection != null) {
-    // prueba
-	String miabuelo = "materno";
-	String SQL = "select a.string AS first, b.string AS second, c.string AS noun
+   	String SQL = "select"
+	a.string AS first, b.string AS second, c.string AS noun
     from short_adjective a , long_adjective b, noun c ORDER BY random() limit 1";
     Statement stmt = connection.createStatement();
     ResultSet rs = stmt.executeQuery(SQL);
